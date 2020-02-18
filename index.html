@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <h3>Click the Load Data button.</h3>
+      <h3>Please click the Load Data button.</h3>
       <div align = "center">
         <button type="button" class="btn btn-success" id= "btn">Load Data</button>
       </div>
@@ -19,6 +19,23 @@
     <div id = "table-space">
 
     </div>
+
+    <script id = "template" type = "text/x-handlebars-template">
+      <table class="table">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">name</th>
+          <th scope="col">url</th>
+        </tr>
+        {{#each sites}}
+          <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{name}}</td>
+            <td>{{url}}</td>
+          </tr>
+        {{/each}}
+      </table>
+    </script>
     <script src="js/handlebars-v4.7.3.js"></script>
     <script src="js/main.js"></script>
   </body>
