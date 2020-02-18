@@ -2,8 +2,9 @@ var ourRequest = new XMLHttpRequest();
 var btn = document.getElementById('btn');
 
 btn.addEventListener("click",function(){
+  const proxyurl = "https://cors-anywhere.herokuapp.com/"; //to handle blocked by CORS policy issue
   const url = "http://aimtell.com/files/sites.json"
-  ourRequest.open('GET',url)
+  ourRequest.open('GET',proxyurl + url)
 
   ourRequest.onload = function(){
     var ourData = JSON.parse(ourRequest.responseText)
